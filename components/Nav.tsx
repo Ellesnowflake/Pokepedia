@@ -1,5 +1,5 @@
 import { Fragment, useEffect } from 'react'
-import Link from 'next/Link'
+import Link from 'next/link'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
