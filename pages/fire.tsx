@@ -1,6 +1,6 @@
 import Hero from '../components/Hero'
 import Nav from '../components/Nav'
-import PokemonGrid from '../components/PokemonGrid'
+import PokemonGrid, { Pokemon } from '../components/PokemonGrid'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 import { useState } from 'react'
@@ -9,9 +9,9 @@ import ErrorMessage from '../components/ErrorMessage'
 export default function Home() {
 	const [limit, setLimit] = useState(12)
 	const { isLoading, isError, data } = useQuery(
-		`pokemonList-${limit}`,
+		`pokemonList-fire`,
 		({ signal }) =>
-			axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`, {
+			axios.get(`https://pokeapi.co/api/v2/type/fire`, {
 				signal,
 			}),
 	)
@@ -20,16 +20,22 @@ export default function Home() {
 		<>
 			<Nav />
 			<main className="grid gap-36 mb-36">
-				<Hero />
+				<Hero category="fire" />
 				{!isLoading && isError && (
 					<ErrorMessage message="We are all out of Pokeballs. Please try again." />
 				)}
 				<>
 					<PokemonGrid
+						heading="Fire Type"
 						isLoading={isLoading}
-						pokemonList={data?.data.results}
+						pokemonList={data?.data.pokemon
+							.slice(0, limit)
+							.map(
+								(pokemon: { pokemon: { pokemon: Pokemon } }) =>
+									pokemon.pokemon,
+							)}
 						onLoadMore={() => setLimit(prev => prev + 12)}
-						endReached={limit >= data?.data.count}
+						endReached={limit >= data?.data.pokemon.length}
 					/>
 				</>
 			</main>
