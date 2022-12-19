@@ -2,7 +2,7 @@
 
 Dive back into a world of wonders with this pokedex-like website.
 
-[Find the live version here](https://ellesnowflake.github.io/Pokepedia/grass)
+[Find the live version here](https://ellesnowflake.github.io/Pokepedia)
 
 
 ## Tech used
