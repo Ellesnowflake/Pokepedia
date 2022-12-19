@@ -15,7 +15,9 @@ Dive back into a world of wonders with this pokedex-like website.
 - API requests caching: React-Query
 
 # Site structure
-- index --> homepage
+
+```
+-- index --> homepage
     |
     -- grass --> page dedicated to grass type pokemon
     |
@@ -24,6 +26,7 @@ Dive back into a world of wonders with this pokedex-like website.
     -- water --> page dedicated to water type pokemon
     |
     -- [pokemon-name] --> page dedicated to the selected pokemon (in depth info)
+```
     
     
 Media:
