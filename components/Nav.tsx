@@ -42,7 +42,7 @@ const navItemClasses = {
 export default function Example() {
 	useEffect(() => {
 		navItems.forEach(
-			item => (item.active = item.href === window.location.pathname),
+			item => (item.active = item.href.split("/").pop() === window.location.pathname.split("/").pop())
 		)
 	}, [])
 

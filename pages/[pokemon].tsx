@@ -9,7 +9,7 @@ export default function PokemonPage() {
 	const [pokemonName, setPokemonName] = useState<string>()
 
 	useEffect(() => {
-		setPokemonName(window.location.pathname.replace('/', ''))
+		setPokemonName(window.location.pathname.split("/").pop())
 		if (pokemonName) document.title = pokemonName
 	}, [])
 
