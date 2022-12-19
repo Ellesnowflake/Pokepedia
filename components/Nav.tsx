@@ -1,4 +1,5 @@
 import { Fragment, useEffect } from 'react'
+import Link from 'next/Link'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -73,7 +74,7 @@ export default function Example() {
 							<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 								<div className="hidden sm:flex sm:space-x-8">
 									{navItems.map(item => (
-										<a
+										<Link
 											key={item.name}
 											href={item.href}
 											className={
@@ -85,7 +86,7 @@ export default function Example() {
 											}
 										>
 											{item.name}
-										</a>
+										</Link>
 									))}
 								</div>
 							</div>

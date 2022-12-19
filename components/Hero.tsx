@@ -40,14 +40,14 @@ export default function Hero({
 						</span>
 					</h1>
 					<div className="mt-10 sm:flex sm:justify-center lg:justify-start">
-						<div className="rounded-md shadow">
+						<div className="rounded-md shadow bg-blue-600 bg-green-600 hover:bg-blue-700 hover:bg-green-700 bg-transparent hover:bg-transparent">
 							<button
 								onClick={() =>
 									document
 										.querySelector('#pokemon-grid')
 										?.scrollIntoView({ behavior: 'smooth' })
 								}
-								className={`flex w-full items-center justify-center rounded-md border border-transparent  bg-${
+								className={`flex w-full items-center justify-center rounded-md border border-transparent bg-${
 									category
 										? textColors[
 												category as keyof typeof textColors

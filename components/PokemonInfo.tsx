@@ -21,7 +21,7 @@ export default function PokemonInfo({ pokemon }: { pokemon: PokemonInfo }) {
 	return (
 		<div className="overflow-hidden bg-white shadow sm:rounded-lg">
 			<div className="px-4 py-5 sm:px-6">
-				<div className=" flex gap-10 overflow-scroll">
+				<div className=" flex gap-10 overflow-x-scroll">
 					<img
 						className="inline-block h-32 w-32"
 						src={pokemon.sprites.front_default}
@@ -56,7 +56,7 @@ export default function PokemonInfo({ pokemon }: { pokemon: PokemonInfo }) {
 						<dd className="mt-1 text-sm text-gray-900">
 							<ul
 								role="list"
-								className="my-2 overflow-scroll flex gap-1 py-2"
+								className="my-2 overflow-x-scroll flex gap-1 py-2"
 							>
 								{pokemon.types.map(type => (
 									<li

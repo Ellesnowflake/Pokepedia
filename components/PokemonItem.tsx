@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FingerPrintIcon } from '@heroicons/react/20/solid'
 import { Pokemon } from './PokemonGrid'
 import { useQuery } from 'react-query'
@@ -28,7 +29,7 @@ export default function PokemonItem({ pokemon }: { pokemon: Pokemon }) {
 									{pokemon.name}
 								</h3>
 							</div>
-							<ul className="my-2 overflow-scroll flex gap-1 py-2">
+							<ul className="my-2 overflow-x-scroll flex gap-1 py-2">
 								{pokemonData.data.types.map(
 									(type: { type: { name: string } }) => {
 										return (
@@ -56,7 +57,7 @@ export default function PokemonItem({ pokemon }: { pokemon: Pokemon }) {
 					<div>
 						<div className="-mt-px flex divide-x ">
 							<div className="flex w-0 flex-1">
-								<a
+								<Link
 									href={`/${pokemon.name}`}
 									className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
 								>
@@ -65,7 +66,7 @@ export default function PokemonItem({ pokemon }: { pokemon: Pokemon }) {
 										aria-hidden="true"
 									/>
 									<span className="ml-3">More details</span>
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
